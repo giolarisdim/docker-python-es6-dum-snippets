@@ -49,12 +49,12 @@ def rewardstudent(sorted_studentdetails,reward):
 def statement(sorted_studentdetails):
     print()
     for record in sorted_studentdetails:
-        if record[1] >= 950:
-            print ("{} congratulations! You allready have gather {} points".format(record[0], record[1]))
+        name, grade = record
+        if grade >= 950:
+            print ("{} congratulations! You allready have gather {} points".format(name, grade))
         else:
             break
     print()
-
 
 studentdetails = readdetails()
 sorted_studentdetails=ranksort(studentdetails)
