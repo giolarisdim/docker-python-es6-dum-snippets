@@ -22,8 +22,6 @@ def readdetails():
 
 def ranksort(studentdetails):
     try:
-
-
         print()
         sorted_studentdetails = sorted(studentdetails.items(), key=operator.itemgetter(1),reverse = True)
         print(sorted_studentdetails)
@@ -31,10 +29,11 @@ def ranksort(studentdetails):
         print (" {} is hitting the second place with a reward of 300 eurw and {} marks".format(sorted_studentdetails[1][0], sorted_studentdetails[1][1]))
         print (" {} is hitting the third place with a reward of 100 eurw and {} marks".format(sorted_studentdetails[2][0], sorted_studentdetails[2][1]))
         print()
-        return sorted_studentdetails
     except IndexError:
         print("aint no such thing as giving wrong numbers, enter the right one please")
         quit()
+    else:
+        return sorted_studentdetails
 
 
 def rewardstudent(sorted_studentdetails,reward):
@@ -50,12 +49,12 @@ def rewardstudent(sorted_studentdetails,reward):
 def statement(sorted_studentdetails):
     print()
     for record in sorted_studentdetails:
-        if record[1] >= 950:
-            print ("{} congratulations! You allready have gather {} points".format(record[0], record[1]))
+        name, grade = record
+        if grade >= 950:
+            print ("{} congratulations! You allready have gather {} points".format(name, grade))
         else:
             break
     print()
-
 
 studentdetails = readdetails()
 sorted_studentdetails=ranksort(studentdetails)
