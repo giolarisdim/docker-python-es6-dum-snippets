@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJS</title>
+</head>
+<body>
+    <h1>Asynchronous js Practise</h1>
+    <script>
+
+
+        /*
+         A SIMPLE FUNCTION FOR PRACTISING ASYNC JS 
+         THAT TAKES COORDINATES AS ARGUMENTS
+         RETRIEVING DATA FROM AN API
+         RETURNING A MSG WITH THE SUNRISE AND SUNSET TIMES
+         */
+
+        function getSunset(lat,lng) {
+            fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`)
+            .then(result => {
+                //console.log(result);
+                return result.json();
+            })
+            .then(data => {
+                // console.log(data);
+                const sun = data.results;
+                console.log(`Today in Koutsion, the sun will appear on the horison
+                   at ${sun.sunrise} and sunset comes at ${sun.sunset}.`);
+            })
+            .catch(error => console.log(error));
+        }
+
+        getSunset(37.858351, 22.66788);
+
+
+        async function getSunsetAW(lat,lng) {
+            try {
+              const result = await fetch
+              (`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+              const data = await result.json();
+              const sun = data.results;
+              console.log(`Today in Koutsion sun appears on the horison
+                 at ${sun.sunrise} and sunset comes at ${sun.sunset}.`);
+            } catch(error){
+              alert(error);
+            }
+
+        }
+        getSunsetAW(37.858351, 22.66788);
+
+
+        let dataKoutsi;
+        getSunsetAW(37.858351, 22.66788).then(dt => {
+            let dataKoutsi = dt
+            console.log(datakoutsi);
+        });
+
+
+
+    </script>
+</body>
+</html>
