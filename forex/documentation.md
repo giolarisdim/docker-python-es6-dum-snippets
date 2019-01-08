@@ -62,7 +62,8 @@ sudo apt install docker-ce`
 
 
 in ubuntu apps open postman - 
-set up steps here: ` http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/`
+set up steps above:
+*  ` http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/`
 
 
 time to make some tests with postman
