@@ -77,8 +77,8 @@ localhost:5000\here we put our routes like ---->>
 in postman we choose the "body" with "raw" data and "JSON(application/json)" then we hit above 
 
 {
-	"username": "mits",
-	"password": "123"
+	"username": "yourusername",
+	"password": "yourpassword"
 }
 
 those will return 
@@ -95,8 +95,8 @@ in this case we will see how much we take for 50 usd
 * ` localhost:5000/usdtogbp`
 
 {
-	"username": "mits",
-	"password": "123",
+	"username": "yourusername",
+	"password": "yourpassword",
 	"x": 50
 }
 
